@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg" style="background-color: var(--shoesell-primary);"
+     role="navigation"
+     aria-label="Navegación principal">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold"
+       routerLink="/"
+       aria-label="Inicio - ShoeSell">
+      ShoeSell
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-controls="navbarNav"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse"
+         id="navbarNav"
+         [class.collapse]="!isMenuOpen()"
+         [class.show]="isMenuOpen()">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            #homeLink="routerLinkActive"
+            [attr.aria-current]="homeLink.isActive ? 'page' : null"
+            (click)="closeMenu()"
+          >Home</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            routerLink="/productos"
+            routerLinkActive="active"
+            #productosLink="routerLinkActive"
+            [attr.aria-current]="productosLink.isActive ? 'page' : null"
+            (click)="closeMenu()"
+          >Productos</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-white"
+            routerLink="/acerca-de"
+            routerLinkActive="active"
+            #acercaLink="routerLinkActive"
+            [attr.aria-current]="acercaLink.isActive ? 'page' : null"
+            (click)="closeMenu()"
+          >Acerca de</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
