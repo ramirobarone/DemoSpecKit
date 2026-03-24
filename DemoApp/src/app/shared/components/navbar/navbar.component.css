@@ -1,0 +1,12 @@
+.navbar .nav-link.active {
+  color: var(--shoesell-secondary) !important;
+  font-weight: 600;
+}
+
+.navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
